@@ -12,8 +12,10 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, origins=[
+    "http://localhost:3000",
+    "https://student-performance-prediction-alpha.vercel.app"
+])
 BASE_DIR = os.path.dirname(__file__)
 MODEL_PATH = os.path.join(BASE_DIR, "../models/model.pkl")
 ENCODER_PATH = os.path.join(BASE_DIR, "../models/label_encoder.pkl")
