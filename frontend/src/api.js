@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: "http://localhost:5000/api" });
+const BASE = import.meta.env.VITE_API_URL || "https://student-performance-prediction-1845.onrender.com/api";
+const api = axios.create({ baseURL: BASE });
+
 export const getMetrics = () => api.get("/metrics").then((r) => r.data);
 export const predictRisk = (data) => api.post("/predict", data).then((r) => r.data);
 export const getStudents = (params) => api.get("/students", { params }).then((r) => r.data);
