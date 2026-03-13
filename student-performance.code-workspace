@@ -1,0 +1,40 @@
+{
+  "folders": [
+    { "name": "Backend (Flask)", "path": "./backend" },
+    { "name": "Frontend (React)", "path": "./frontend" },
+    { "name": "Data & Models", "path": "./data" }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "python.defaultInterpreterPath": "./backend/venv/bin/python",
+    "tailwindCSS.includeLanguages": { "javascript": "javascript", "jsx": "javascript" },
+    "files.associations": { "*.jsx": "javascriptreact" },
+    "editor.rulers": [100],
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+      "esbenp.prettier-vscode",
+      "humao.rest-client"
+    ]
+  },
+  "launch": {
+    "configurations": [
+      {
+        "name": "Flask Backend",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Backend (Flask)}/app.py",
+        "env": { "FLASK_ENV": "development", "FLASK_DEBUG": "1" },
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+}
